@@ -5,12 +5,12 @@ import (
 )
 
 type Stack struct {
-	list linkedList.LinkedList
+	list linkedList.NewLinkedList
 }
 
 func NewStack() *Stack {
 	return &Stack{
-		list: linkedList.LinkedList{},
+		list: linkedList.NewLinkedList{},
 	}
 }
 func (stack *Stack) Push(value int) {

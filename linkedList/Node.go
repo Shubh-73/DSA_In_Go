@@ -7,12 +7,12 @@ type Node struct {
 	Next  *Node
 }
 
-type LinkedList struct {
+type NewLinkedList struct {
 	Head *Node
 	Tail *Node
 }
 
-func (this *LinkedList) AddHead(value int) {
+func (this *NewLinkedList) AddHead(value int) {
 	newNode := &Node{Value: value, Next: this.Head}
 	if this.Head == nil {
 		this.Tail = newNode
@@ -20,7 +20,7 @@ func (this *LinkedList) AddHead(value int) {
 	this.Head = newNode
 }
 
-func (this *LinkedList) AddTail(value int) {
+func (this *NewLinkedList) AddTail(value int) {
 	newNode := &Node{Value: value}
 	if this.Tail != nil {
 		this.Tail.Next = newNode
@@ -31,7 +31,7 @@ func (this *LinkedList) AddTail(value int) {
 
 }
 
-func (this *LinkedList) RemoveHead() (int, bool) {
+func (this *NewLinkedList) RemoveHead() (int, bool) {
 	if this.Head == nil {
 		return 0, false
 	}
@@ -41,7 +41,7 @@ func (this *LinkedList) RemoveHead() (int, bool) {
 	return newHead.Value, true
 }
 
-func (this *LinkedList) GetHead() *Node {
+func (this *NewLinkedList) GetHead() *Node {
 	return this.Head
 }
 

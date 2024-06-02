@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	var ll = &linkedList.LinkedList{}
+	var ll = &linkedList.NewLinkedList{}
 	for i := 0; i < 10; i++ {
 		ll.AddTail((i + 1) * (i + 2))
 
