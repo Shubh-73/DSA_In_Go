@@ -12,13 +12,16 @@ func main() {
 		ll.AddTail((i + 1) * (i + 2))
 
 	}
-
+	fmt.Println("Original Linked List ")
 	linkedList.Traverse(ll.GetHead())
+	fmt.Println("============================================")
 
-	fmt.Println("This was Linked List")
-
-	newHead := linkedListUtils.RemoveNthNode(ll.GetHead(), 3)
+	fmt.Println("======finding the middle of linked list ===========")
+	midNodeValue, _ := linkedListUtils.FindMiddle(ll.GetHead())
+	linkedList.Traverse(ll.GetHead())
+	fmt.Println("Middle Node of Linked List -> ", midNodeValue)
+	fmt.Println("============================================")
+	fmt.Println("======deleting the middle of linked list ==========")
+	newHead := linkedListUtils.DeleteMidNode(ll.GetHead())
 	linkedList.Traverse(newHead)
-	fmt.Println("updated Linked List")
-
 }
