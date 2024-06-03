@@ -12,15 +12,16 @@ type NewLinkedList struct {
 	Tail *Node
 }
 
-func (this *NewLinkedList) AddHead(value int) {
+func (this *NewLinkedList) AddHead(value int) *Node {
 	newNode := &Node{Value: value, Next: this.Head}
 	if this.Head == nil {
 		this.Tail = newNode
 	}
 	this.Head = newNode
+	return newNode
 }
 
-func (this *NewLinkedList) AddTail(value int) {
+func (this *NewLinkedList) AddTail(value int) *Node {
 	newNode := &Node{Value: value}
 	if this.Tail != nil {
 		this.Tail.Next = newNode
@@ -28,6 +29,7 @@ func (this *NewLinkedList) AddTail(value int) {
 		this.Head = newNode
 	}
 	this.Tail = newNode
+	return this.Head
 
 }
 
